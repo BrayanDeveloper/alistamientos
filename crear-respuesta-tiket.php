@@ -3,14 +3,9 @@ session_start();
 if ($_SESSION['username']) {
     require 'funciones/conexion.php';
     $conexion = new Conexion();
-    $sql = "SELECT count(id_alistamiento)as conteo_alistamiento FROM alistamientos";
-    $conteo_alistamiento = $conexion->conectar()->query($sql)->fetchAll();
-    if ($conteo_alistamiento) {
-        foreach ($conteo_alistamiento as $key) {
-           $conteo_total_alistamiento = $key['conteo_alistamiento'];
-        }
-      
-    }
+    
+    
+  
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -95,29 +90,16 @@ if ($_SESSION['username']) {
                     <legend><h2>Nueva Respuesta, Tiket: <?php echo @$_GET['tiket']; ?></h2></legend>
                 <form action="funciones/funciones.php" method="post">
                     <input type="hidden" name="crear-tiket-respuesta" value="crear-tiket-respuesta">
+                    <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
                     <legend></legend>
                     
                     <br>
                     
-                    TIPO TIKET: 
-                    <select name="tipo" class="form-control" required="required">
-                        <option value="Preoperacional">Soporte</option>
-                    </select>
-                    <br>
-                    USUARIO: <?php echo $_SESSION['username']; ?>
-                    <br>
-                    <h4>DETALLE DEL TIKET</h4>
-                    <br>
-                    Mensaje: <textarea name="mensaje" width="400px" height="600px" class="campos form-control"></textarea>
-                    <br>
-                    PRIORIDAD: 
-                    <select name="prioridad" class="form-control" required="required">
-                        <option value="ALTA">Alta</option>
-                        <option value="ALTA">Baja</option>
-                    </select>
-                    <br>
+                    Respuesta:<br><textarea name="respuesta" style="width: 500px;height: 100px;"></textarea>
                     
-                    <input type="submit" class="btn-primary" style="padding: 10px; float: left;" value="Guardar Tiket">
+                    <br>
+                    <br>
+                    <input type="submit" class="btn-primary" style="padding: 10px; float: left;" value="Enviar Respuesta">
                     <input type="reset" value="Restablecer" style="padding: 10px; float: left;">
                     <style type="text/css"> .campos{ padding-left: 30px; border-bottom: 0px solid black; }.campos:hover{ padding-left: 30px; border-bottom: 1px solid dodgerblue; }</style>
                 </form>

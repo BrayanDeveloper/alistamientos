@@ -121,7 +121,7 @@ if ($_SESSION['username']) {
                 <td><a href="ver-tiket-respuestas?id=<?php echo $alis['id_tiket']; ?>&tiket=<?php echo $alis['mensaje']; ?>" class="btn text-info"><i class="fa fa-eye" title="Ver tiket"></i></a></td>
                 <td>
                 <!-- <td><a href="editar-tiket?id=<?php echo $alis['id_tiket']; ?>" class="btn text-warning"><i class="fa fa-edit" title="Editar tiket"></i></a></td> -->
-                <td><a href="funciones/funciones?id_delete_tiket=<?php echo $alis['id_tiket']; ?>" class="btn text-danger" title="Eliminar Tiket"><i class="fa fa-remove"></i></a></td>
+                <!-- <td><a href="funciones/funciones?id_delete_tiket=<?php echo $alis['id_tiket']; ?>" class="btn text-danger" title="Eliminar Tiket"><i class="fa fa-remove"></i></a></td> -->
                 <!-- <td><a href="exportar-pdf?id=<?php echo $alis['id_alistamiento']; ?>" class="btn text-success" title="Exportar a Pdf"><i class="fa fa-file"></i></a></td> -->
                 <style type="text/css">.tabla:hover{ background-color:gray;}</style>
             </tr>

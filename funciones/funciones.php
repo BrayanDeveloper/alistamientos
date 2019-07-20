@@ -259,6 +259,31 @@ if (@$_POST['crear-tiket']=='crear-tiket') {
 			}
 		
 	}
+
+	#Crear Respuesta a Tiket
+if (@$_POST['crear-tiket-respuesta']=='crear-tiket-respuesta') {
+	// echo "<pre>";
+	// var_dump($_POST);
+	// echo "</pre>";
+	// $hora_despacho = date('h:m:s');
+	$conexion = new Conexion();
+	// $file = $_FILES['file']['tmp_name'];
+	// $nameFile = $_FILES['file']['name'];
+	$fecha = date('r');
+	
+	$sql = "INSERT INTO respuestas_tiket_soportes(respuesta,usuario,fecha,id_tiket) VALUES('$_POST[respuesta]','$_SESSION[username]','$fecha',$_POST[id])";
+	
+			$conectando = $conexion->conectar()->query($sql);	
+			if ($conectando) {			
+				echo "
+				<script>
+					alert('Has Enviado tu Respuesta con exito');
+					location.href = ('../ver-tiket');
+				</script>
+				";
+			}
+		
+	}
 }
 else
 {

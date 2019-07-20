@@ -8,7 +8,7 @@ class Conexion
 		#$datos = "mysql:dbname=admin_cootransunidos; host=localhost;";
 		#$user = "admin_developer";
 		#$pass = "cuentaDeveloper";
-		$datos = "mysql:dbname=admin_cootransunidos; host=localhost;";
+		$datos = "mysql:dbname=admin_cootransunidos1; host=localhost;";
 		$user = "root";
 		$pass = "";
 		try {

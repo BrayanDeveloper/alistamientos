@@ -3,7 +3,7 @@ session_start();
 if ($_SESSION['username']) {
     require 'funciones/conexion.php';
     $conexion = new Conexion();
-    $sql = "SELECT * FROM respuestas_tiket_soportes where id_tiket=$_GET[id] order by id_respuesta_tiket_soporte desc";
+    $sql = "SELECT * FROM respuestas_tiket_soportes where id_tiket=$_GET[id] order by id_respuesta_tiked_soporte desc";
     $tikets = $conexion->conectar()->query($sql)->fetchAll();
     
 ?>
@@ -92,7 +92,7 @@ if ($_SESSION['username']) {
             
                     
                     <legend><h2>Tiket: <?php echo @$_GET['tiket']; ?></h2></legend>
-                    <a href="crear-respuesta-tiket?id=<?php echo $_GET['id']; ?>?tiket=<?php echo $_GET['tiket']; ?>" class="btn btn-success">Nuevo Respuesta</a><br><br>
+                    <a href="crear-respuesta-tiket?id=<?php echo $_GET['id']; ?>&tiket=<?php echo $_GET['tiket']; ?>" class="btn btn-success">Nuevo Respuesta</a><br><br>
             <table width="100%" id="example" class="display">
             <thead>
             <tr>
@@ -100,10 +100,7 @@ if ($_SESSION['username']) {
                 <th>Respuestas de Soporte</th>
                 <th></th>
                 <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                
             
             </tr>
             </thead>
@@ -116,7 +113,7 @@ if ($_SESSION['username']) {
                 <td><?php echo $alis['respuesta']; ?></td>
                 <td><?php echo $alis['usuario']; ?></td>
                 <td><?php echo $alis['fecha']; ?></td>
-                <td>
+               
                
                 <style type="text/css">.tabla:hover{ background-color:gray;}</style>
             </tr>
