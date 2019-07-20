@@ -232,6 +232,33 @@ if (@$_POST['editar-usuario'] == 'editar-usuario') {
 			";
 		}
 	}
+
+	#Crear Tiked
+if (@$_POST['crear-tiket']=='crear-tiket') {
+	// echo "<pre>";
+	// var_dump($_POST);
+	// echo "</pre>";
+	// $hora_despacho = date('h:m:s');
+	$conexion = new Conexion();
+	// $file = $_FILES['file']['tmp_name'];
+	// $nameFile = $_FILES['file']['name'];
+	$fecha = date('Y-m-d');
+	$codigo = rand(1000,9000);
+	$sql = "INSERT INTO tiket_soportes(codigo,usuario,mensaje,estado,fecha,prioridad,tipo,id_usuario) VALUES($codigo, '$_SESSION[username]', '$_POST[mensaje]','activo','$fecha', '$_POST[prioridad]','$_POST[tipo]',$_SESSION[id_usuario] )";
+	// $destino = "../img/firma/".$nameFile;
+	// $envioFile = move_uploaded_file($file, $destino);
+			
+			$conectando = $conexion->conectar()->query($sql);	
+			if ($conectando) {			
+				echo "
+				<script>
+					alert('Has Creado un Tiket con exito');
+					location.href = ('../ver-tiket');
+				</script>
+				";
+			}
+		
+	}
 }
 else
 {
