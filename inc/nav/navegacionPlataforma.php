@@ -27,16 +27,8 @@
             
         </ul>
         
-          <!-- <li class="">
-              <a href="ver-alistamientos"><i class="fa fa-circle"></i> Ver Alistamientos</a>
-          </li> -->
-        
-        <li>
-            
-        </li>
-        <!-- <li><a href="#">Page 2</a></li> 
-        <li><a href="#">Page 3</a></li>  -->
       </ul>
+
       <ul class="nav navbar-nav">
            
           
@@ -49,11 +41,22 @@
             </li>
             
         </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
-      </ul>
+        <li>
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="img/iconos/log-flume.png"> Registros 
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="logs-ingreso">Registros de ingreso</a></li>
+               
+            </li>
+            
+        </ul>
+        </li>
+        
+
+        
+     
     </div>
   </div>
 </nav>
