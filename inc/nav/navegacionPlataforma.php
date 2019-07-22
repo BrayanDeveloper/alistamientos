@@ -48,7 +48,7 @@
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="logs-ingreso">Registros de ingreso</a></li>
-               
+               <li><a href="logs-salida">Registros de Salida</a></li>
             </li>
             
         </ul>

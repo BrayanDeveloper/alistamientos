@@ -3,7 +3,7 @@ session_start();
 if ($_SESSION['username']) {
     require 'funciones/conexion.php';
     $conexion = new Conexion();
-    $sql = "SELECT * FROM logs where accion = 'ingreso al sistema' AND id_usuario=$_SESSION[id_usuario] order by id_log desc";
+    $sql = "SELECT * FROM logs where accion = 'salida del sistema' AND id_usuario=$_SESSION[id_usuario] order by id_log desc";
     $logs = $conexion->conectar()->query($sql)->fetchAll();
     
 ?>
@@ -128,7 +128,7 @@ if ($_SESSION['username']) {
 
             ?>
             <tr>
-                <td>No has ingresado todavia al sistema</td> 
+                <td>No has salido todavia del sistema</td> 
                 <td></td>
             </tr>
             <?php 
