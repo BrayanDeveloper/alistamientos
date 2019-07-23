@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 20-07-2019 a las 17:31:43
--- Versión del servidor: 10.2.25-MariaDB
--- Versión de PHP: 7.2.7
+-- Servidor: localhost
+-- Tiempo de generación: 23-07-2019 a las 23:51:49
+-- Versión del servidor: 10.3.15-MariaDB
+-- Versión de PHP: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `admin_cootransunidos`
+-- Base de datos: `admin_cootransunidos1`
 --
 
 -- --------------------------------------------------------
@@ -70,7 +70,63 @@ INSERT INTO `alistamientos` (`id_alistamiento`, `fecha_inspeccion`, `hora_inspec
 (9, '2019-07-03', '01:00', 1, '1', 'Preoperacional', 'demo', '212', 1212, 1, '1', 1, '08:07:35', '12w', '121w', 'w2w', '1', 'Brayan', '1', '1w2w2', NULL, NULL, NULL),
 (10, '2019-07-04', '01:00', 4, '1', 'Preoperacional', 'demo', '212', 1212, 1, '1', 1, '08:07:14', '12w', '121w', 'w2w', '1', 'Brayan', '1', '1w2w2', 'aprobada', 'jjjss', 1),
 (11, '2019-07-10', '02:00', 1, '1', 'Preoperacional', 'demo', '212', 1212, 1, '1', 1, '08:07:30', '12w', '121w', 'w2w', '1', 'Brayan', '1', '1w2w2', 'aprobada', 'prueba', 1),
-(12, 'Mon, 15 Jul 2019 13:32:42 +0000', '13:32:42 PM', 11, '818', 'Preoperacional', 'demo', '1', 1, 11, '1', 1, '13:32:42 PM', '1', '1', '1', '1', '1', '1', '1', 'aprobada', '11', 1);
+(12, 'Mon, 15 Jul 2019 13:32:42 +0000', '13:32:42 PM', 11, '818', 'Preoperacional', 'demo', '1', 1, 11, '1', 1, '13:32:42 PM', '1', '1', '1', '1', '1', '1', '1', 'aprobada', '11', 1),
+(13, 'Mon, 22 Jul 2019 23:40:36 +0200', '23:40:36 PM', 12, '818', 'Preoperacional', 'admin', '4', 4, 4, '4', 4, '23:40:36 PM', '4', '4', '4', '4', '4', '4', '4', 'aprobada', '4', 3),
+(14, 'Mon, 22 Jul 2019 23:42:58 +0200', '23:42:58 PM', 13, '9', 'Preoperacional', 'demo', '9', 9, 9, '9', 9, '23:42:58 PM', '9', '9', '9', '9', '9', '9', '9', 'aprobada', '9', 1),
+(15, 'Tue, 23 Jul 2019 00:21:46 +0200', '00:21:46 AM', 14, '7', 'Preoperacional', 'demo', '7', 7, 7, '7', 7, '00:21:46 AM', '7', '7', '7', '7', '7', '7', '7', 'aprobada', '7', 1),
+(16, 'Tue, 23 Jul 2019 00:22:21 +0200', '00:22:21 AM', 15, '6', 'Preoperacional', 'admin', '6', 6, 6, '6', 6, '00:22:21 AM', '6', '6', '666', '6', '6', '6', '6', 'aprobada', '6', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `documentacion`
+--
+
+CREATE TABLE `documentacion` (
+  `id_documentacion` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `descripcion` varchar(9999) NOT NULL,
+  `imagen` varchar(255) NOT NULL,
+  `fecha` varchar(255) NOT NULL,
+  `estado` varchar(20) NOT NULL,
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logs`
+--
+
+CREATE TABLE `logs` (
+  `id_log` int(11) NOT NULL,
+  `accion` varchar(255) NOT NULL,
+  `fecha` varchar(100) NOT NULL,
+  `username` varchar(60) NOT NULL,
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `logs`
+--
+
+INSERT INTO `logs` (`id_log`, `accion`, `fecha`, `username`, `id_usuario`) VALUES
+(1, 'ingreso al sistema', 'Sun, 21 Jul 2019 23:28:14 +0200', '', 1),
+(2, 'salida del sistema', 'Sun, 21 Jul 2019 23:58:59 +0200', '', 1),
+(3, 'ingreso al sistema', 'Sun, 21 Jul 2019 23:59:06 +0200', '', 1),
+(4, 'salida del sistema', 'Mon, 22 Jul 2019 00:00:02 +0200', '', 1),
+(5, 'ingreso al sistema', 'Mon, 22 Jul 2019 00:00:06 +0200', '', 1),
+(6, 'salida del sistema', 'Mon, 22 Jul 2019 00:10:09 +0200', '', 1),
+(7, 'ingreso al sistema', 'Mon, 22 Jul 2019 00:36:44 +0200', 'demo', 1),
+(8, 'ingreso al sistema', 'Mon, 22 Jul 2019 00:39:22 +0200', 'demo', 1),
+(9, 'ingreso al sistema', 'Mon, 22 Jul 2019 00:39:48 +0200', 'demo', 1),
+(10, 'ingreso al sistema', 'Mon, 22 Jul 2019 00:40:28 +0200', 'demo', 1),
+(11, 'salida del sistema', 'Mon, 22 Jul 2019 00:40:31 +0200', 'demo', 1),
+(12, 'ingreso al sistema', 'Mon, 22 Jul 2019 02:26:06 +0200', 'demo', 1),
+(13, 'salida del sistema', 'Mon, 22 Jul 2019 02:32:41 +0200', 'demo', 1),
+(14, 'salida del sistema', 'Mon, 22 Jul 2019 23:41:59 +0200', 'admin', 3),
+(15, 'ingreso al sistema', 'Mon, 22 Jul 2019 23:42:02 +0200', 'demo', 1),
+(16, 'ingreso al sistema', 'Tue, 23 Jul 2019 00:21:19 +0200', 'demo', 1);
 
 -- --------------------------------------------------------
 
@@ -85,6 +141,16 @@ CREATE TABLE `respuestas_tiket_soportes` (
   `fecha` varchar(60) NOT NULL,
   `id_tiket` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `respuestas_tiket_soportes`
+--
+
+INSERT INTO `respuestas_tiket_soportes` (`id_respuesta_tiked_soporte`, `respuesta`, `usuario`, `fecha`, `id_tiket`) VALUES
+(1, '1', 'brayan', '1', 1),
+(2, 'prueba de respuestas', 'demo', '2019-07-21', 1),
+(3, 'no entiendo\r\n', 'demo', '2019-07-21', 1),
+(4, 'prueba con fecha', 'demo', 'Sun, 21 Jul 2019 01:26:47 +0200', 1);
 
 -- --------------------------------------------------------
 
@@ -103,6 +169,14 @@ CREATE TABLE `tiket_soportes` (
   `tipo` varchar(50) NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tiket_soportes`
+--
+
+INSERT INTO `tiket_soportes` (`id_tiket`, `codigo`, `usuario`, `mensaje`, `estado`, `fecha`, `prioridad`, `tipo`, `id_usuario`) VALUES
+(1, '4793', 'demo', 'prueba de tiket', 'activo', '2019-07-21', 'ALTA', 'Preoperacional', 1),
+(2, '1595', 'admin', 'admin-tiket', 'activo', '2019-07-22', 'ALTA', 'Preoperacional', 2);
 
 -- --------------------------------------------------------
 
@@ -127,7 +201,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `username`, `email`, `password`, `firma`, `estado`, `rol`) VALUES
-(1, 'Demo nombre', 'Demo Apellido', 'demo', 'demoEmail@computrons.com', 'demo', 'firma.jpg', 'activo', 'usuario');
+(1, 'Demo nombre', 'Demo Apellido', 'demo', 'demoEmail@computrons.com', 'demo', 'firma.jpg', 'suspendido', 'usuario'),
+(4, 'prueba', 'prueba', 'prueba', 'prueba@gmail.com', 'prueba', '', 'activo', 'admin'),
+(3, 'admin', 'admin', 'admin', 'admin@hotmail.com', 'admin', 'Isopoly_01.gif', 'activo', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -140,11 +216,22 @@ ALTER TABLE `alistamientos`
   ADD PRIMARY KEY (`id_alistamiento`);
 
 --
+-- Indices de la tabla `documentacion`
+--
+ALTER TABLE `documentacion`
+  ADD PRIMARY KEY (`id_documentacion`);
+
+--
+-- Indices de la tabla `logs`
+--
+ALTER TABLE `logs`
+  ADD PRIMARY KEY (`id_log`);
+
+--
 -- Indices de la tabla `respuestas_tiket_soportes`
 --
 ALTER TABLE `respuestas_tiket_soportes`
-  ADD PRIMARY KEY (`id_respuesta_tiked_soporte`),
-  ADD KEY `id_tiket` (`id_tiket`);
+  ADD PRIMARY KEY (`id_respuesta_tiked_soporte`);
 
 --
 -- Indices de la tabla `tiket_soportes`
@@ -167,25 +254,37 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `alistamientos`
 --
 ALTER TABLE `alistamientos`
-  MODIFY `id_alistamiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_alistamiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de la tabla `documentacion`
+--
+ALTER TABLE `documentacion`
+  MODIFY `id_documentacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `logs`
+--
+ALTER TABLE `logs`
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas_tiket_soportes`
 --
 ALTER TABLE `respuestas_tiket_soportes`
-  MODIFY `id_respuesta_tiked_soporte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_respuesta_tiked_soporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tiket_soportes`
 --
 ALTER TABLE `tiket_soportes`
-  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

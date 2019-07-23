@@ -3,7 +3,7 @@ session_start();
 if ($_SESSION['id_usuario']) {
 	# code...
 
-require 'conexion.php';
+require '../funciones/conexion.php';
 
 #editar alistamiento
 if (@$_POST['editar-alistamiento'] == 'editar-alistamiento') {
@@ -283,6 +283,97 @@ if (@$_POST['crear-tiket-respuesta']=='crear-tiket-respuesta') {
 				";
 			}
 		
+	}
+
+	#Crear usuario desde admin
+if (@$_POST['crear-usuario']=='crear-usuario') {
+	// echo "<pre>";
+	// var_dump($_POST);
+	// echo "</pre>";
+	// $hora_despacho = date('h:m:s');
+	$conexion = new Conexion();
+	// $file = $_FILES['file']['tmp_name'];
+	// $nameFile = $_FILES['file']['name'];
+	// $fecha = date('r');
+	
+	$sql = "INSERT INTO usuarios(
+				nombre,
+				apellido,
+				email,
+				username,
+				password,
+				estado,
+				firma,
+				rol) 
+			VALUES(
+				'$_POST[nombre]',
+				'$_POST[apellido]',
+				'$_POST[email]',
+				'$_POST[user]',
+				'$_POST[pass]',
+				'activo',
+				'',
+				'usuario'
+				)"
+				;
+	
+			$conectando = $conexion->conectar()->query($sql);	
+			if ($conectando) {			
+				echo "
+				<script>
+					alert('Has Creado un nuevo usuario con exito');
+					location.href = ('../ver-usuario');
+				</script>
+				";
+			}
+		
+	}
+	#editar usuario desde administracion
+	if (@$_POST['editar-usuario-admin'] == 'editar-usuario-admin') {
+	// echo "<pre>";
+	// var_dump($_POST);
+	// echo "</pre>";
+	// $hora_despacho = date('h:m:s');
+	$conexion = new Conexion();
+	$sql = "UPDATE usuarios SET
+	nombre='$_POST[nombre]',
+	apellido=	'$_POST[apellido]',
+	username=	'$_POST[user]',
+	email=	'$_POST[email]', 
+	password=	'$_POST[pass]',
+	rol=	'$_POST[rol]',
+	estado=	'$_POST[estado]'
+	WHERE id_usuario=$_POST[id]";
+		
+		$conectando = $conexion->conectar()->query($sql);
+		if ($conectando) {			
+			echo "
+			<script>
+				alert('Actualizado con exito');
+				location.href = ('../ver-usuario');
+			</script>
+			";
+		}
+	}
+
+	#eliminar Usuario desde admin
+	if (@$_GET['id_delete_user']) {
+	// echo "<pre>";
+	// var_dump($_POST);
+	// echo "</pre>";
+	// $hora_despacho = date('h:m:s');
+	$conexion = new Conexion();
+	$sql = "DELETE FROM usuarios WHERE id_usuario=$_GET[id_delete_user]";
+		
+		$conectando = $conexion->conectar()->query($sql);
+		if ($conectando) {			
+			echo "
+			<script>
+				alert('Usuario Eliminado con exito');
+				location.href = ('../ver-usuario');
+			</script>
+			";
+		}
 	}
 }
 else

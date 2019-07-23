@@ -98,7 +98,8 @@ if ($_SESSION['username']) {
                     <legend>COOTRASNUNIDOS</legend>
                     <P>NIT: 890501119-7</P>
                     <P>RESOLUCION:</P>
-                    FECHA INSPECCION: <input type="date" name="fecha_inspeccion" class="campos" required="required"> HORA: <input type="time" name="hora_inspeccion" class="campos" required="required"><br>
+                    <!-- FECHA INSPECCION: <input type="date" name="fecha_inspeccion" class="campos" required="required"> HORA: <input type="time" name="hora_inspeccion" class="campos" required="required"> -->
+                    <br>
                     N# ALISTAMIENTO <input type="number" name="n_alistamiento" class="campos form-control" value="<?php echo $conteo_total_alistamiento; ?>" required="required"> (DIST) - <input type="text" name="distribuccion" class="form-control" required="required"><br>
                     TIPO ALISTAMIENTO: 
                     <select name="tipo_alistamiento" class="form-control" required="required">

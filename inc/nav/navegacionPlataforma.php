@@ -8,7 +8,7 @@
       </button>
       
     </div>
-
+    <center>
     <div class="collapse navbar-collapse" id="myNavbar">
 
           <ul class="nav navbar-nav">
@@ -21,8 +21,10 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="img/iconos/test.png"> Alistamientos
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="ver-alistamientos">Ver Alistamientos</a></li>
-                <li><a href="crear-alistamiento">Nuevo Alistamiento</a></li>
+                <center>
+                  <li><a href="ver-alistamientos">Ver Alistamientos</a></li>
+                  <li><a href="crear-alistamiento">Nuevo Alistamiento</a></li>
+                </center>
             </li>
             
         </ul>
@@ -36,8 +38,10 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="img/iconos/question.png"> Soporte 
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="ver-tiket">Ver Tikets</a></li>
-                <li><a href="crear-tiket">Nuevo Tiket</a></li>
+                <center>
+                  <li><a href="ver-tiket">Ver Tikets</a></li>
+                  <li><a href="crear-tiket">Nuevo Tiket</a></li>
+                </center>
             </li>
             
         </ul>
@@ -47,8 +51,10 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="img/iconos/log-flume.png"> Registros 
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="logs-ingreso">Registros de ingreso</a></li>
-               <li><a href="logs-salida">Registros de Salida</a></li>
+                <center>
+                  <li><a href="logs-ingreso">Registros de ingreso</a></li>
+                  <li><a href="logs-salida">Registros de Salida</a></li>
+                </center>
             </li>
             
         </ul>
@@ -58,6 +64,7 @@
         
      
     </div>
+    </center>
   </div>
 </nav>
 
